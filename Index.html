@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Calculator</title>
+    <style>
+        /* Styling the main content */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        #main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+        
+        /* Styling the sections */
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border: 1px solid #e0e0e0;
+        }
+        
+        /* Styling the headings */
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        
+        /* Styling the paragraphs */
+        p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        /* Styling the input fields */
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            width: 100%;
+        }
+        
+        /* Styling the buttons */
+        button {
+            display: block;
+            width: 160px;
+            height: 40px;
+            margin: 20px auto;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        /* Adding hover effect */
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        /* Styling the links */
+        a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+        
+        /* Adding a separator line */
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Geometry Calculator</h1>
+        <p>Welcome to the Geometry Calculator. This tool helps you calculate the areas of various two-dimensional shapes.</p>
+        <p>To get started, click on any shape below:</p>
+        
+        <!-- Creating an unordered list -->
+        <ul>
+            <li><a href="#circle">Circle</a></li>
+            <li><a href="#triangle">Triangle</a></li>
+            <li><a href="#square">Square</a></li>
+            <li><a href="#rectangle">Rectangle</a></li>
+        </ul>
+
+        <!-- Creating a section for each shape -->
+
+        <!-- Circle -->
+        <section id="circle">
+            <h2>Circle Area</h2>
+            <p>Enter the radius of the circle:</p>
+            <input type="text" id="radius">
+            <p><strong>Result:</strong></p>
+            <input type="text" id="circle-area" readonly>
+            <button onclick="calculateCircleArea()">Calculate</button>
+            <div>
+                <a href="#main">Go to top</a>
+            </div>
+        </section>
+
+        <!-- Triangle -->
+        <section id="triangle">
+            <h2>Triangle Area</h2>
+            <p>Enter the base and height of the triangle:</p>
+            <input type="text" id="base">
+            <input type="text" id="height">
+            <p><strong>Result:</strong></p>
+            <input type="text" id="triangle-area" readonly>
+            <button onclick="calculateTriangleArea()">Calculate</button>
+            <div>
+                <a href="#main">Go to top</a>
+            </div>
+        </section>
+
+        <!-- Square -->
+        <section id="square">
+            <h2>Square Area</h2>
+            <p>Enter the side length of the square:</p>
+            <input type="text" id="side">
+            <p><strong>Result:</strong></p>
+            <input type="text" id="square-area" readonly>
+            <button onclick="calculateSquareArea()">Calculate</button>
+            <div>
+                <a href="#main">Go to top</a>
+            </div>
+        </section>
+
+        <!-- Rectangle -->
+        <section id="rectangle">
+            <h2>Rectangle Area</h2>
+            <p>Enter the length and width of the rectangle:</p>
+            <input type="text" id="length">
+            <input type="text" id="width">
+            <p><strong>Result:</strong></p>
+            <input type="text" id="rectangle-area" readonly>
+            <button onclick="calculateRectangleArea()">Calculate</button>
+            <div>
+                <a href="#main">Go to top</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Functions to calculate the areas
+
+        // Circle
+        function calculateCircleArea() {
+            var radius = parseFloat(document.getElementById('radius').value);
+            var area = Math.PI * radius * radius;
+            document.getElementById('circle-area').value = area.toFixed(2);
+        }
+
+        // Triangle
+        function calculateTriangleArea() {
+            var base = parseFloat(document.getElementById('base').value);
+            var height = parseFloat(document.getElementById('height').value);
+            var area = 0.5 * base * height;
+            document.getElementById('triangle-area').value = area.toFixed(2);
+        }
+
+        // Square
+        function calculateSquareArea() {
+            var side = parseFloat(document.getElementById('side').value);
+            var area = side * side;
+            document.getElementById('square-area').value = area.toFixed(2);
+        }
+
+        // Rectangle
+        function calculateRectangleArea() {
+            var length = parseFloat(document.getElementById('length').value);
+            var width = parseFloat(document.getElementById('width').value);
+            var area = length * width;
+            document.getElementById('rectangle-area').value = area.toFixed(2);
+        }
+    </script>
+</body>
+</html>
